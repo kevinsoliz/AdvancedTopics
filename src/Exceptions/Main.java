@@ -14,7 +14,8 @@ public class Main {
         try {
             account.withdraw(10);
         } catch (AccountException  e) {
-            e.printStackTrace(); // estas excepciones en cadenas las verás en big companys.
+           var cause = e.getCause();
+            System.out.println(cause.getMessage()); // y asi tiens tu mensaje del error especifico!
         }
     }
 }
