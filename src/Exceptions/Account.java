@@ -11,13 +11,9 @@ public class Account {
     //Channing exceptions: wrapping an exception inside a more general exception. Se usa sobre todo para
     // construir libraries and frameworks.
     public void withdraw(float value) throws AccountException {
-        if(value > balance) {
-            //Hay una manera más sencilla de escribir todo este código (en la AccountException);
-            var fundsException = new InsufficientFundException();
-            var accountException = new AccountException();
-            accountException.initCause(fundsException);
-            throw accountException;
-        }
+        if(value > balance)
+            throw new AccountException(new InsufficientFundException());
+        //estamos lanzando un account exception CAUSADO por un InsufficientFund..
     }
 
 

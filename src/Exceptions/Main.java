@@ -13,8 +13,8 @@ public class Main {
         var account = new Account();
         try {
             account.withdraw(10);
-        } catch (InsufficientFundException e) {
-            System.out.println(e.getMessage());
+        } catch (AccountException  e) {
+            e.printStackTrace(); // estas excepciones en cadenas las verás en big companys.
         }
     }
 }
