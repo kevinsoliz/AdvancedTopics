@@ -7,5 +7,6 @@ public class Main {
         User number = user.get(0); //Unboxing
         System.out.println(Utils.max(new User(10), new User(20)));
 
+        Utils.print(2, new User(10));
     }
 }
