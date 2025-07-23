@@ -1,23 +1,14 @@
 package Generics;
 
-public class User extends Number implements Cloneable {
-    @Override
-    public int intValue() {
-        return 0;
+public class User implements Comparable<User> {
+    private int points;
+
+    public User(int points) {
+        this.points = points;
     }
 
     @Override
-    public long longValue() {
-        return 0;
-    }
-
-    @Override
-    public float floatValue() {
-        return 0;
-    }
-
-    @Override
-    public double doubleValue() {
-        return 0;
+    public int compareTo(User other) {
+        return points - other.points;
     }
 }
